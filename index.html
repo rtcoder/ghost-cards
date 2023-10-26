@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ghost cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper"></div>
+
+<script>
+    document.body.querySelector('.wrapper').innerHTML = [
+        'mario',
+    ].map(name => {
+        const heroName = `${name}.png`;
+        const bgName = `${name}-bg.png`;
+        const logoName = `${name}-logo.png`;
+        return `<div class="card" style="--bgImg: url(./img/${bgName});--heroImg: url(./img/${heroName});--logoImg: url(./img/${logoName})">
+                    <div class="content"></div>
+                </div>`;
+    }).join('');
+</script>
+</body>
+</html>
